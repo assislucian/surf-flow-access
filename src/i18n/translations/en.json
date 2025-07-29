@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "title": "Surfskatehalle",
+    "tagline": "Experience the feeling of surfing on asphalt – book your surfskate session and get instant access.",
+    "cta": "Book now"
+  },
+  "features": {
+    "equipment": {
+      "title": "High-quality surfskate equipment",
+      "description": "Our surfskate boards and protective gear are suitable for all skill levels."
+    },
+    "booking": {
+      "title": "Flexible booking",
+      "description": "Book hourly sessions according to your preferences"
+    },
+    "access": {
+      "title": "Secure access",
+      "description": "Automatic PIN codes via email after payment"
+    }
+  },
+  "pricing": {
+    "title": "Choose the perfect package for your surfskate session",
+    "subtitle": "Transparent pricing with no hidden costs",
+    "singleSession": {
+      "title": "Single Session",
+      "description": "Perfect for your first visit",
+      "price": "25€",
+      "duration": "per hour",
+      "features": [
+        "1 hour surfskate area",
+        "Complete protective equipment",
+        "Surfskate board included",
+        "PIN code via email"
+      ]
+    },
+    "multiSession": {
+      "title": "Multi-Session",
+      "description": "Optimal for regular visits",
+      "price": "90€",
+      "duration": "5 Sessions",
+      "popular": "Popular",
+      "features": [
+        "5 hours surfskate area",
+        "Complete protective equipment",
+        "Surfskate board included",
+        "Flexible scheduling"
+      ]
+    },
+    "dayPass": {
+      "title": "Day Pass",
+      "description": "Available all day",
+      "price": "45€",
+      "duration": "full day",
+      "features": [
+        "Entire surfskate hall available",
+        "Unlimited sessions",
+        "Complete protective equipment",
+        "Premium support"
+      ]
+    },
+    "cta": "Book now"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our surfskate hall",
+    "questions": [
+      {
+        "question": "What equipment is included in the price?",
+        "answer": "All necessary protective equipment (helmet, knee pads, wrist guards) and a surfskate board are included. You only need to bring sportswear."
+      },
+      {
+        "question": "How does access to the hall work?",
+        "answer": "After successful booking and payment, you will automatically receive a 6-digit PIN code via email. You can use this code to enter the hall during your booked time."
+      },
+      {
+        "question": "Can I cancel my booking?",
+        "answer": "Yes, you can cancel your booking free of charge up to 24 hours before the appointment. For more short-term cancellations, a processing fee will be charged."
+      },
+      {
+        "question": "Are there age restrictions?",
+        "answer": "Our hall is suitable for all age groups. Children under 16 require parental consent."
+      },
+      {
+        "question": "What happens if there are technical problems?",
+        "answer": "If you have problems with access, you can reach our support at the provided phone number. We will help you quickly and easily."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Your modern surfskate hall in the heart of the city. Experience the feeling of surfing on asphalt in a safe environment.",
+    "contact": {
+      "title": "Contact",
+      "address": "Musterstraße 123, 12345 Berlin",
+      "phone": "+49 (0) 123 456 789",
+      "email": "info@surfskatehalle.de"
+    },
+    "hours": {
+      "title": "Opening Hours",
+      "weekdays": "Mon-Fri: 10:00 - 22:00",
+      "weekend": "Sat-Sun: 09:00 - 23:00",
+      "holidays": "Holidays: 10:00 - 20:00"
+    },
+    "legal": {
+      "copyright": "© 2024 Surfskatehalle. All rights reserved.",
+      "imprint": "Imprint",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
+  "language": {
+    "switchTo": "Auf Deutsch wechseln"
+  }
+}

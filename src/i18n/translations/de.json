@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "title": "Surfskatehalle",
+    "tagline": "Erlebe das Gefühl des Wellenreitens auf Asphalt – buche deine Surfskate-Session und genieße sofortigen Zugang.",
+    "cta": "Jetzt buchen"
+  },
+  "features": {
+    "equipment": {
+      "title": "Hochwertige Surfskate-Ausrüstung",
+      "description": "Unsere Surfskate-Boards und Schutz-Equipment sind für alle Skill-Level geeignet."
+    },
+    "booking": {
+      "title": "Flexible Buchung",
+      "description": "Buche stundenweise nach deinen Wünschen"
+    },
+    "access": {
+      "title": "Sicherer Zugang",
+      "description": "Automatische PIN-Codes per E-Mail nach der Bezahlung"
+    }
+  },
+  "pricing": {
+    "title": "Wähle das perfekte Paket für deine Surfskate-Session",
+    "subtitle": "Transparente Preise ohne versteckte Kosten",
+    "singleSession": {
+      "title": "Einzel-Session",
+      "description": "Perfekt für den ersten Besuch",
+      "price": "25€",
+      "duration": "pro Stunde",
+      "features": [
+        "1 Stunde Surfskate-Bereich",
+        "Komplette Schutzausrüstung",
+        "Surfskate-Board inklusive",
+        "PIN-Code per E-Mail"
+      ]
+    },
+    "multiSession": {
+      "title": "Multi-Session",
+      "description": "Optimal für regelmäßige Besuche",
+      "price": "90€",
+      "duration": "5 Sessions",
+      "popular": "Beliebt",
+      "features": [
+        "5 Stunden Surfskate-Bereich",
+        "Komplette Schutzausrüstung",
+        "Surfskate-Board inklusive",
+        "Flexible Terminwahl"
+      ]
+    },
+    "dayPass": {
+      "title": "Tages-Pass",
+      "description": "Ganztägig verfügbar",
+      "price": "45€",
+      "duration": "ganzer Tag",
+      "features": [
+        "Surfskate-Halle komplett verfügbar",
+        "Unbegrenzte Sessions",
+        "Komplette Schutzausrüstung",
+        "Premium Support"
+      ]
+    },
+    "cta": "Jetzt buchen"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles was du über unsere Surfskatehalle wissen musst",
+    "questions": [
+      {
+        "question": "Welche Ausrüstung ist im Preis enthalten?",
+        "answer": "Alle notwendige Schutzausrüstung (Helm, Knieschützer, Handgelenkschützer) sowie ein Surfskate-Board sind im Preis enthalten. Du musst nur Sportkleidung mitbringen."
+      },
+      {
+        "question": "Wie funktioniert der Zugang zur Halle?",
+        "answer": "Nach erfolgreicher Buchung und Bezahlung erhältst du automatisch einen 6-stelligen PIN-Code per E-Mail. Mit diesem Code kannst du die Halle während deiner gebuchten Zeit betreten."
+      },
+      {
+        "question": "Kann ich meine Buchung stornieren?",
+        "answer": "Ja, du kannst deine Buchung bis zu 24 Stunden vor dem Termin kostenfrei stornieren. Bei kurzfristigeren Stornierungen wird eine Bearbeitungsgebühr erhoben."
+      },
+      {
+        "question": "Gibt es Altersbeschränkungen?",
+        "answer": "Unsere Halle ist für alle Altersgruppen geeignet. Kinder unter 16 Jahren benötigen eine Einverständniserklärung der Eltern."
+      },
+      {
+        "question": "Was passiert bei technischen Problemen?",
+        "answer": "Solltest du Probleme mit dem Zugang haben, erreichst du unseren Support unter der angegebenen Telefonnummer. Wir helfen dir schnell und unkompliziert weiter."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Deine moderne Surfskatehalle im Herzen der Stadt. Erlebe das Surfgefühl auf Asphalt in sicherer Umgebung.",
+    "contact": {
+      "title": "Kontakt",
+      "address": "Musterstraße 123, 12345 Berlin",
+      "phone": "+49 (0) 123 456 789",
+      "email": "info@surfskatehalle.de"
+    },
+    "hours": {
+      "title": "Öffnungszeiten",
+      "weekdays": "Mo-Fr: 10:00 - 22:00",
+      "weekend": "Sa-So: 09:00 - 23:00",
+      "holidays": "Feiertage: 10:00 - 20:00"
+    },
+    "legal": {
+      "copyright": "© 2024 Surfskatehalle. Alle Rechte vorbehalten.",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "terms": "AGB"
+    }
+  },
+  "language": {
+    "switchTo": "Switch to English"
+  }
+}
