@@ -85,7 +85,12 @@ export const PricingSection = () => {
                   <span>{feature}</span>
                 </div>
               ))}
-              <Button className="w-full mt-6">{t('pricing.cta')}</Button>
+              <Button 
+                className="w-full mt-6"
+                onClick={() => window.location.href = '/book'}
+              >
+                {t('pricing.cta')}
+              </Button>
             </CardContent>
           </Card>
         </div>

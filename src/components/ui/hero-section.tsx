@@ -46,6 +46,7 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 text-lg font-semibold shadow-energy transition-all duration-300 hover:shadow-glow hover:scale-105"
+              onClick={() => window.location.href = '/book'}
             >
               {t('hero.cta')}
             </Button>

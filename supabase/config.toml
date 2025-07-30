@@ -1,1 +1,13 @@
 project_id = "ootdiuulgnwijkctbabi"
+
+[functions.create-payment]
+verify_jwt = true
+
+[functions.cancel-reservation]
+verify_jwt = true
+
+[functions.send-pin-email]
+verify_jwt = true
+
+[functions.cleanup-expired-pins]
+verify_jwt = false
