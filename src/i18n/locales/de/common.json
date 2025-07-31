@@ -1,0 +1,53 @@
+{
+  "loading": "Wird geladen...",
+  "error": "Fehler",
+  "success": "Erfolgreich",
+  "cancel": "Abbrechen",
+  "save": "Speichern",
+  "delete": "Löschen",
+  "edit": "Bearbeiten",
+  "close": "Schließen",
+  "yes": "Ja",
+  "no": "Nein",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "name": "Name",
+  "language": {
+    "switch": "Switch to English",
+    "german": "Deutsch",
+    "english": "English"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "book": "Buchen",
+    "myBookings": "Meine Buchungen",
+    "admin": "Admin",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "register": "Registrieren"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "loginTitle": "Bei Ihrem Konto anmelden",
+    "registerTitle": "Neues Konto erstellen",
+    "resetPassword": "Passwort zurücksetzen",
+    "emailAddress": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "fullName": "Vollständiger Name",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+    "dontHaveAccount": "Noch kein Konto?",
+    "signInHere": "Hier anmelden",
+    "signUpHere": "Hier registrieren",
+    "forgotPassword": "Passwort vergessen?",
+    "backToLogin": "Zurück zur Anmeldung",
+    "sendResetEmail": "Reset-E-Mail senden",
+    "passwordsDoNotMatch": "Passwörter stimmen nicht überein",
+    "registrationSuccess": "Registrierung erfolgreich! Bitte überprüfen Sie Ihre E-Mail.",
+    "loginSuccess": "Erfolgreich angemeldet",
+    "logoutSuccess": "Erfolgreich abgemeldet",
+    "resetEmailSent": "Reset-E-Mail gesendet"
+  }
+}

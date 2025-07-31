@@ -1,0 +1,53 @@
+{
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "cancel": "Cancel",
+  "save": "Save",
+  "delete": "Delete",
+  "edit": "Edit",
+  "close": "Close",
+  "yes": "Yes",
+  "no": "No",
+  "email": "Email",
+  "password": "Password",
+  "name": "Name",
+  "language": {
+    "switch": "Auf Deutsch wechseln",
+    "german": "Deutsch",
+    "english": "English"
+  },
+  "navigation": {
+    "home": "Home",
+    "book": "Book",
+    "myBookings": "My Bookings",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create new account",
+    "resetPassword": "Reset Password",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "fullName": "Full Name",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "signInHere": "Sign in here",
+    "signUpHere": "Sign up here",
+    "forgotPassword": "Forgot password?",
+    "backToLogin": "Back to login",
+    "sendResetEmail": "Send reset email",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "registrationSuccess": "Registration successful! Please check your email.",
+    "loginSuccess": "Successfully logged in",
+    "logoutSuccess": "Successfully logged out",
+    "resetEmailSent": "Reset email sent"
+  }
+}

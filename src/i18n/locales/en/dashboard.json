@@ -1,0 +1,28 @@
+{
+  "title": "Dashboard",
+  "welcome": "Welcome, {{email}}",
+  "myReservations": "My Reservations",
+  "noReservations": "You have no reservations yet",
+  "bookNow": "Book Now",
+  "newBooking": "New Booking",
+  "upcoming": "Upcoming",
+  "past": "Past",
+  "status": {
+    "pending": "Pending",
+    "paid": "Paid",
+    "cancelled": "Cancelled",
+    "completed": "Completed"
+  },
+  "referenceCode": "Reference Code",
+  "copyRefCode": "Copy Code",
+  "downloadIcs": "Download Calendar",
+  "cancelBooking": "Cancel Booking",
+  "confirmCancel": "Are you sure you want to cancel this booking?",
+  "cancellationSuccess": "Booking cancelled successfully",
+  "cancellationError": "Error cancelling booking",
+  "refCodeCopied": "Reference code copied",
+  "amount": "Amount",
+  "duration": "Duration",
+  "space": "Space",
+  "error": "Error loading reservations"
+}

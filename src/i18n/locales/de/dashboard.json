@@ -1,0 +1,28 @@
+{
+  "title": "Dashboard",
+  "welcome": "Willkommen, {{email}}",
+  "myReservations": "Meine Buchungen",
+  "noReservations": "Sie haben noch keine Buchungen",
+  "bookNow": "Jetzt buchen",
+  "newBooking": "Neue Buchung",
+  "upcoming": "Bevorstehend",
+  "past": "Vergangen",
+  "status": {
+    "pending": "Ausstehend",
+    "paid": "Bezahlt",
+    "cancelled": "Storniert",
+    "completed": "Abgeschlossen"
+  },
+  "referenceCode": "Referenz-Code",
+  "copyRefCode": "Code kopieren",
+  "downloadIcs": "Kalender herunterladen",
+  "cancelBooking": "Buchung stornieren",
+  "confirmCancel": "Sind Sie sicher, dass Sie diese Buchung stornieren möchten?",
+  "cancellationSuccess": "Buchung erfolgreich storniert",
+  "cancellationError": "Fehler beim Stornieren der Buchung",
+  "refCodeCopied": "Referenz-Code kopiert",
+  "amount": "Betrag",
+  "duration": "Dauer",
+  "space": "Bereich",
+  "error": "Fehler beim Laden der Buchungen"
+}
