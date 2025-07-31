@@ -1,100 +1,78 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+// src/components/ui/pricing-section.tsx
 import { Check } from "lucide-react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import React from "react";
 
-export const PricingSection = () => {
+type PlanKey = "singleSession" | "multiSession" | "dayPass";
+
+function toArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value as string[];
+  if (value && typeof value === "object") return Object.values(value as Record<string, string>).map(String);
+  if (typeof value === "string" && value.trim().length > 0) return [value];
+  return [];
+}
+
+function PlanCard({ planKey }: { planKey: PlanKey }) {
   const { t } = useTranslation();
 
+  // Read strings with safe defaults
+  const title = t(`pricing.${planKey}.title`, { defaultValue: planKey });
+  const price = t(`pricing.${planKey}.price`, { defaultValue: "" });
+  const unit = t(`pricing.${planKey}.unit`, { defaultValue: "" });
+  const cta = t(`pricing.${planKey}.cta`, { defaultValue: t("pricing.bookNow", { defaultValue: "Book now" }) });
+
+  // Features: normalize to array to avoid runtime errors
+  const raw = t(`pricing.${planKey}.features`, { returnObjects: true, defaultValue: [] as unknown });
+  const features = toArray(raw);
+
   return (
-    <section className="py-20 bg-gradient-wave">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            {t('pricing.title')}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('pricing.subtitle')}
-          </p>
+    <div className="rounded-xl border bg-background p-6 shadow-sm hover:shadow-md transition">
+      <div className="mb-3 text-lg font-semibold">{title}</div>
+      {(price || unit) && (
+        <div className="mb-4 text-2xl font-bold">
+          {price} <span className="text-muted-foreground text-base font-medium">{unit}</span>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {/* Basic Package */}
-          <Card className="border-2 hover:shadow-energy transition-all duration-300">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">{t('pricing.singleSession.title')}</CardTitle>
-              <CardDescription>{t('pricing.singleSession.description')}</CardDescription>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-primary">{t('pricing.singleSession.price')}</span>
-                <span className="text-muted-foreground">/{t('pricing.singleSession.duration')}</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {(t('pricing.singleSession.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
-                <div key={index} className="flex items-center">
-                  <Check className="w-5 h-5 text-primary mr-3" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-              <Button className="w-full mt-6">{t('pricing.cta')}</Button>
-            </CardContent>
-          </Card>
-          
-          {/* Premium Package */}
-          <Card className="border-2 border-primary hover:shadow-glow transition-all duration-300 relative">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                {t('pricing.multiSession.popular')}
-              </span>
-            </div>
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">{t('pricing.multiSession.title')}</CardTitle>
-              <CardDescription>{t('pricing.multiSession.description')}</CardDescription>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-primary">{t('pricing.multiSession.price')}</span>
-                <span className="text-muted-foreground">/{t('pricing.multiSession.duration')}</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {(t('pricing.multiSession.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
-                <div key={index} className="flex items-center">
-                  <Check className="w-5 h-5 text-primary mr-3" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-              <Button className="w-full mt-6 bg-primary hover:bg-primary/90">
-                {t('pricing.cta')}
-              </Button>
-            </CardContent>
-          </Card>
-          
-          {/* Pro Package */}
-          <Card className="border-2 hover:shadow-energy transition-all duration-300">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl">{t('pricing.dayPass.title')}</CardTitle>
-              <CardDescription>{t('pricing.dayPass.description')}</CardDescription>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-primary">{t('pricing.dayPass.price')}</span>
-                <span className="text-muted-foreground">/{t('pricing.dayPass.duration')}</span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {(t('pricing.dayPass.features', { returnObjects: true }) as string[]).map((feature: string, index: number) => (
-                <div key={index} className="flex items-center">
-                  <Check className="w-5 h-5 text-primary mr-3" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-              <Button 
-                className="w-full mt-6"
-                onClick={() => window.location.href = '/book'}
-              >
-                {t('pricing.cta')}
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+      )}
+      <div className="space-y-2 mb-6">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center">
+            <Check className="w-5 h-5 mr-3" />
+            <span>{feature}</span>
+          </div>
+        ))}
+        {features.length === 0 && (
+          <div className="text-sm text-muted-foreground">
+            {t("pricing.noFeatures", { defaultValue: "Details coming soon." })}
+          </div>
+        )}
+      </div>
+      <button className="w-full rounded-md bg-primary px-4 py-2 text-primary-foreground hover:opacity-95">
+        {cta}
+      </button>
+    </div>
+  );
+}
+
+export default function PricingSection() {
+  const { t } = useTranslation();
+
+  const heading = t("pricing.title", { defaultValue: "Prices & Packages" });
+  const subtitle = t("pricing.subtitle", {
+    defaultValue: "Choose the perfect package for your surfskate session.",
+  });
+
+  return (
+    <section className="max-w-6xl mx-auto px-4 py-12">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold">{heading}</h2>
+        <p className="text-muted-foreground">{subtitle}</p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        <PlanCard planKey="singleSession" />
+        <PlanCard planKey="multiSession" />
+        <PlanCard planKey="dayPass" />
       </div>
     </section>
   );
-};
+}
