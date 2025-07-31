@@ -1,76 +1,80 @@
-// src/components/ui/faq-section.tsx
-import React from "react";
+// src/components/ui/pricing-section.tsx
+import { Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
+import React from "react";
 
-type FAQ = { question: string; answer: string };
+type PlanKey = "singleSession" | "multiSession" | "dayPass";
 
-function toFAQArray(value: unknown): FAQ[] {
-  if (Array.isArray(value)) {
-    // Array of strings or objects → normalize
-    return (value as any[]).map((v) =>
-      typeof v === "object" && v !== null
-        ? { question: String((v as any).question ?? ""), answer: String((v as any).answer ?? "") }
-        : { question: String(v ?? ""), answer: "" }
-    );
-  }
-  if (value && typeof value === "object") {
-    // Object map → values
-    return Object.values(value as Record<string, any>).map((v) => ({
-      question: String(v?.question ?? ""),
-      answer: String(v?.answer ?? ""),
-    }));
-  }
-  // Single string or empty
-  if (typeof value === "string" && value.trim()) return [{ question: value, answer: "" }];
+function toArray(value: unknown): string[] {
+  if (Array.isArray(value)) return value as string[];
+  if (value && typeof value === "object") return Object.values(value as Record<string, string>).map(String);
+  if (typeof value === "string" && value.trim().length > 0) return [value];
   return [];
 }
 
-export default function FAQSection() {
+function PlanCard({ planKey }: { planKey: PlanKey }) {
   const { t } = useTranslation();
 
-  const heading = t("faq.title", { defaultValue: "Frequently Asked Questions" });
-  const subtitle = t("faq.subtitle", {
-    defaultValue: "Everything you need to know about our surfskate hall",
-  });
+  const title = t(`pricing.${planKey}.title`, { defaultValue: planKey });
+  const price = t(`pricing.${planKey}.price`, { defaultValue: "" });
+  const unit = t(`pricing.${planKey}.unit`, { defaultValue: "" });
+  const cta = t(`pricing.${planKey}.cta`, { defaultValue: t("pricing.bookNow", { defaultValue: "Book now" }) });
 
-  const raw = t("faq.items", { returnObjects: true, defaultValue: [] as unknown });
-  const faqs = toFAQArray(raw);
+  const raw = t(`pricing.${planKey}.features`, { returnObjects: true, defaultValue: [] as unknown });
+  const features = toArray(raw);
 
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12">
+    <div className="rounded-xl border bg-background p-6 shadow-sm hover:shadow-md transition">
+      <div className="mb-3 text-lg font-semibold">{title}</div>
+      {(price || unit) && (
+        <div className="mb-4 text-2xl font-bold">
+          {price} <span className="text-muted-foreground text-base font-medium">{unit}</span>
+        </div>
+      )}
+      <div className="space-y-2 mb-6">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center">
+            <Check className="w-5 h-5 mr-3" />
+            <span>{feature}</span>
+          </div>
+        ))}
+        {features.length === 0 && (
+          <div className="text-sm text-muted-foreground">
+            {t("pricing.noFeatures", { defaultValue: "Details coming soon." })}
+          </div>
+        )}
+      </div>
+      <button className="w-full rounded-md bg-primary px-4 py-2 text-primary-foreground hover:opacity-95">
+        {cta}
+      </button>
+    </div>
+  );
+}
+
+function PricingSection() {
+  const { t } = useTranslation();
+
+  const heading = t("pricing.title", { defaultValue: "Prices & Packages" });
+  const subtitle = t("pricing.subtitle", {
+    defaultValue: "Choose the perfect package for your surfskate session.",
+  });
+
+  return (
+    <section className="max-w-6xl mx-auto px-4 py-12">
       <div className="mb-8">
         <h2 className="text-3xl font-bold">{heading}</h2>
         <p className="text-muted-foreground">{subtitle}</p>
       </div>
 
-      <Accordion type="single" collapsible className="w-full">
-        {faqs.length > 0 ? (
-          faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border border-border rounded-lg px-6 hover:shadow-sm transition-all"
-            >
-              <AccordionTrigger className="text-left font-semibold hover:text-primary">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))
-        ) : (
-          <div className="text-sm text-muted-foreground">
-            {t("faq.empty", { defaultValue: "FAQ will be added soon." })}
-          </div>
-        )}
-      </Accordion>
+      <div className="grid gap-6 md:grid-cols-3">
+        <PlanCard planKey="singleSession" />
+        <PlanCard planKey="multiSession" />
+        <PlanCard planKey="dayPass" />
+      </div>
     </section>
   );
 }
+
+// Export both forms so imports never break:
+export { PricingSection };
+export default PricingSection;
