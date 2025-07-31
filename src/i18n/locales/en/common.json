@@ -12,11 +12,13 @@
   "email": "Email",
   "password": "Password",
   "name": "Name",
+
   "language": {
-    "switch": "Auf Deutsch wechseln",
+    "switch": "Switch to German",
     "german": "Deutsch",
     "english": "English"
   },
+
   "navigation": {
     "home": "Home",
     "book": "Book",
@@ -26,6 +28,7 @@
     "logout": "Logout",
     "register": "Register"
   },
+
   "auth": {
     "login": "Login",
     "register": "Register",
@@ -49,5 +52,102 @@
     "loginSuccess": "Successfully logged in",
     "logoutSuccess": "Successfully logged out",
     "resetEmailSent": "Reset email sent"
+  },
+
+  "pricing": {
+    "title": "Prices & Packages",
+    "subtitle": "Choose the perfect package for your surfskate session.",
+    "bookNow": "Book now",
+    "noFeatures": "Details coming soon.",
+    "singleSession": {
+      "title": "Single session",
+      "price": "€25",
+      "unit": "/ hour",
+      "cta": "Book now",
+      "features": [
+        "1 hour access to the surfskate hall",
+        "PIN code via email",
+        "Basic protective gear included"
+      ]
+    },
+    "multiSession": {
+      "title": "Multi-session",
+      "price": "€20",
+      "unit": "/ hour (from 3h)",
+      "cta": "Book now",
+      "features": [
+        "3+ hours flexible booking",
+        "Discounted hourly rate",
+        "Priority slot selection"
+      ]
+    },
+    "dayPass": {
+      "title": "Day pass",
+      "price": "€80",
+      "unit": "/ day",
+      "cta": "Book now",
+      "features": [
+        "All-day access",
+        "Full surfskate hall available",
+        "Premium support"
+      ]
+    }
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our surfskate hall",
+    "empty": "FAQ will be added soon.",
+    "items": [
+      {
+        "question": "How do I receive my access PIN?",
+        "answer": "After a successful payment, you will automatically receive your PIN by email together with your booking confirmation."
+      },
+      {
+        "question": "What equipment is included in the price?",
+        "answer": "Helmet, knee pads, wrist guards and a surfskate board are included. You only need to bring sportswear."
+      },
+      {
+        "question": "Can I cancel my booking?",
+        "answer": "Yes. Cancellations are possible up to 24 hours before the start time. After that, refunds are not available."
+      },
+      {
+        "question": "Are there age restrictions?",
+        "answer": "Recommended from 12 years. Minors require parental consent."
+      },
+      {
+        "question": "What happens if there are technical issues?",
+        "answer": "Please contact our support via email or phone and we will help you right away."
+      }
+    ]
+  },
+
+  "booking": {
+    "title": "Book a session",
+    "subtitle": "Choose the date and time for your surfskate session.",
+    "selectDate": "Select date",
+    "selectTime": "Select time",
+    "selectDateTimeFirst": "Please choose a date and time first.",
+    "summaryTitle": "Summary",
+    "dateLabel": "Date",
+    "timeLabel": "Time",
+    "durationLabel": "Duration",
+    "priceLabel": "Price",
+    "payCta": "Proceed to payment",
+    "successTitle": "Booking confirmed",
+    "successBody": "You will receive a confirmation email shortly."
+  },
+
+  "dashboard": {
+    "title": "My bookings",
+    "upcoming": "Upcoming bookings",
+    "past": "Past bookings",
+    "noReservations": "No bookings yet.",
+    "copyRef": "Copy reference",
+    "downloadIcs": "Download .ics",
+    "cancel": "Cancel booking",
+    "cancelled": "Cancelled",
+    "paid": "Paid",
+    "pending": "Pending"
   }
 }
