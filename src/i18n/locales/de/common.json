@@ -12,11 +12,13 @@
   "email": "E-Mail",
   "password": "Passwort",
   "name": "Name",
+
   "language": {
-    "switch": "Switch to English",
+    "switch": "Auf Englisch wechseln",
     "german": "Deutsch",
     "english": "English"
   },
+
   "navigation": {
     "home": "Startseite",
     "book": "Buchen",
@@ -26,6 +28,7 @@
     "logout": "Abmelden",
     "register": "Registrieren"
   },
+
   "auth": {
     "login": "Anmelden",
     "register": "Registrieren",
@@ -49,5 +52,102 @@
     "loginSuccess": "Erfolgreich angemeldet",
     "logoutSuccess": "Erfolgreich abgemeldet",
     "resetEmailSent": "Reset-E-Mail gesendet"
+  },
+
+  "pricing": {
+    "title": "Preise & Pakete",
+    "subtitle": "Wähle das perfekte Paket für deine Surfskate-Session.",
+    "bookNow": "Jetzt buchen",
+    "noFeatures": "Details folgen in Kürze.",
+    "singleSession": {
+      "title": "Einzel-Session",
+      "price": "25 €",
+      "unit": "/ Stunde",
+      "cta": "Jetzt buchen",
+      "features": [
+        "1 Stunde Zugang zur Surfskate-Halle",
+        "PIN-Code per E-Mail",
+        "Grundausrüstung inklusive"
+      ]
+    },
+    "multiSession": {
+      "title": "Multi-Session",
+      "price": "20 €",
+      "unit": "/ Stunde (ab 3 Std.)",
+      "cta": "Jetzt buchen",
+      "features": [
+        "3+ Stunden flexibel buchbar",
+        "Rabattierter Stundenpreis",
+        "Bevorzugte Slot-Auswahl"
+      ]
+    },
+    "dayPass": {
+      "title": "Tagespass",
+      "price": "80 €",
+      "unit": "/ Tag",
+      "cta": "Jetzt buchen",
+      "features": [
+        "Ganztägiger Zugang",
+        "Surfskate-Halle komplett verfügbar",
+        "Premium-Support"
+      ]
+    }
+  },
+
+  "faq": {
+    "title": "Häufige Fragen",
+    "subtitle": "Alles Wichtige zu unserer Surfskate-Halle",
+    "empty": "FAQ wird in Kürze ergänzt.",
+    "items": [
+      {
+        "question": "Wie erhalte ich meinen Zugangs-PIN?",
+        "answer": "Nach erfolgreicher Bezahlung erhältst du deinen PIN automatisch per E-Mail zusammen mit deiner Buchungsbestätigung."
+      },
+      {
+        "question": "Welche Ausrüstung ist im Preis enthalten?",
+        "answer": "Helm, Knieschützer, Handgelenkschützer und ein Surfskate-Board sind inklusive. Du bringst nur Sportkleidung mit."
+      },
+      {
+        "question": "Kann ich meine Buchung stornieren?",
+        "answer": "Ja, Stornierungen sind bis 24 Stunden vor Beginn möglich. Danach ist eine Rückerstattung leider nicht mehr möglich."
+      },
+      {
+        "question": "Gibt es Altersbeschränkungen?",
+        "answer": "Empfohlen ab 12 Jahren. Minderjährige benötigen die Zustimmung der Erziehungsberechtigten."
+      },
+      {
+        "question": "Was passiert bei technischen Problemen?",
+        "answer": "Wende dich bitte an unseren Support per E-Mail oder Telefon. Wir helfen dir sofort weiter."
+      }
+    ]
+  },
+
+  "booking": {
+    "title": "Session buchen",
+    "subtitle": "Wähle Datum und Uhrzeit für deine Surfskate-Session.",
+    "selectDate": "Datum auswählen",
+    "selectTime": "Uhrzeit auswählen",
+    "selectDateTimeFirst": "Bitte zuerst Datum und Uhrzeit wählen.",
+    "summaryTitle": "Zusammenfassung",
+    "dateLabel": "Datum",
+    "timeLabel": "Zeit",
+    "durationLabel": "Dauer",
+    "priceLabel": "Preis",
+    "payCta": "Weiter zur Zahlung",
+    "successTitle": "Buchung bestätigt",
+    "successBody": "Du erhältst in Kürze eine Bestätigung per E-Mail."
+  },
+
+  "dashboard": {
+    "title": "Meine Buchungen",
+    "upcoming": "Bevorstehende Buchungen",
+    "past": "Vergangene Buchungen",
+    "noReservations": "Keine Buchungen vorhanden.",
+    "copyRef": "Referenz kopieren",
+    "downloadIcs": ".ics herunterladen",
+    "cancel": "Buchung stornieren",
+    "cancelled": "Storniert",
+    "paid": "Bezahlt",
+    "pending": "Ausstehend"
   }
 }
