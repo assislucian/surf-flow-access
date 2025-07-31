@@ -48,7 +48,7 @@ const Admin = () => {
   const checkAdminStatus = async () => {
     try {
       // Check if user has admin role
-      const { data: userRoles, error } = await supabase
+      const { data: userRoles, error } = await (supabase as any)
         .from('user_roles')
         .select('role')
         .eq('user_id', user?.id)
@@ -82,7 +82,7 @@ const Admin = () => {
 
   const fetchAllReservations = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('reservations')
         .select(`
           id,

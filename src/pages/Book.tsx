@@ -43,7 +43,7 @@ const Book = () => {
       const dayStart = startOfDay(selectedDate).toISOString();
       const dayEnd = endOfDay(selectedDate).toISOString();
 
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('reservations')
         .select('duration')
         .gte('duration', `[${dayStart},`)
@@ -52,7 +52,7 @@ const Book = () => {
 
       if (error) throw error;
 
-      const booked = data?.map(reservation => {
+      const booked = data?.map((reservation: any) => {
         // Parse duration range
         const match = reservation.duration.match(/\[([^,]+),([^)]+)\)/);
         if (match) {
