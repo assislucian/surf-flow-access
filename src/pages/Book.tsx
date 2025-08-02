@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Calendar } from '@/components/ui/calendar';
+import { PremiumCard, PremiumCardHeader, PremiumCardTitle, PremiumCardContent } from '@/components/ui/premium-card';
+import { PremiumCalendar } from '@/components/ui/premium-calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { toast } from '@/hooks/use-toast';
@@ -48,7 +48,7 @@ const Book = () => {
         .select('duration')
         .gte('duration', `[${dayStart},`)
         .lt('duration', `[${dayEnd},`)
-        .eq('payment_status', 'paid');
+        .eq('status', 'paid');
 
       if (error) throw error;
 
@@ -155,39 +155,53 @@ const Book = () => {
   const price = duration * 25; // 25€ per hour
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">{t('booking.title')}</h1>
-          <div className="flex gap-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/20 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-primary/15 to-transparent rounded-full blur-3xl" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto p-6">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-12 space-y-4 md:space-y-0">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent mb-2">
+              {t('booking.title')}
+            </h1>
+            <p className="text-muted-foreground text-lg">{t('booking.subtitle', 'Reserve sua sessão de surf skate')}</p>
+          </div>
+          <div className="flex gap-4 flex-wrap">
             <LanguageSwitcher />
-            <Button onClick={() => navigate('/dashboard')} variant="outline">
+            <Button 
+              onClick={() => navigate('/dashboard')} 
+              variant="outline" 
+              className="border-border/50 hover:bg-muted/50"
+            >
               {t('booking.backToDashboard')}
             </Button>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>{t('booking.selectDateTime')}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
+        <div className="grid lg:grid-cols-2 gap-8">
+          <PremiumCard className="border-primary/20">
+            <PremiumCardHeader>
+              <PremiumCardTitle>{t('booking.selectDateTime')}</PremiumCardTitle>
+            </PremiumCardHeader>
+            <PremiumCardContent className="space-y-8">
               <div>
-                <label className="text-sm font-medium mb-2 block">{t('booking.selectDate')}</label>
-                <Calendar
+                <label className="text-lg font-semibold mb-4 block">{t('booking.selectDate')}</label>
+                <PremiumCalendar
                   mode="single"
                   selected={selectedDate}
                   onSelect={setSelectedDate}
                   disabled={(date) => isBefore(date, startOfDay(new Date()))}
-                  className="rounded-md border"
+                  className="w-full"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">{t('booking.duration')}</label>
+                <label className="text-lg font-semibold mb-4 block">{t('booking.duration')}</label>
                 <Select value={duration.toString()} onValueChange={(value) => setDuration(Number(value))}>
-                  <SelectTrigger>
+                  <SelectTrigger className="h-12 bg-background/50 border-border/30 hover:border-primary/50 transition-colors">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -200,15 +214,21 @@ const Book = () => {
               </div>
 
               <div>
-                <label className="text-sm font-medium mb-2 block">{t('booking.selectTime')}</label>
-                <div className="grid grid-cols-3 gap-2">
+                <label className="text-lg font-semibold mb-4 block">{t('booking.selectTime')}</label>
+                <div className="grid grid-cols-3 gap-3">
                   {availableSlots.map(time => {
                     const available = isSlotAvailable(time);
                     return (
                       <Button
                         key={time}
                         variant={selectedTime === time ? "default" : "outline"}
-                        className="w-full"
+                        className={`h-12 transition-all duration-200 ${
+                          selectedTime === time 
+                            ? 'bg-gradient-to-r from-primary to-primary/80 shadow-lg' 
+                            : available 
+                              ? 'hover:bg-primary/10 hover:border-primary/50' 
+                              : 'opacity-50'
+                        }`}
                         disabled={!available}
                         onClick={() => setSelectedTime(time)}
                       >
@@ -218,45 +238,57 @@ const Book = () => {
                   })}
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </PremiumCardContent>
+          </PremiumCard>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>{t('booking.summary')}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
+          <PremiumCard className="border-primary/20 bg-gradient-to-br from-card/80 to-card/60">
+            <PremiumCardHeader>
+              <PremiumCardTitle>{t('booking.summary')}</PremiumCardTitle>
+            </PremiumCardHeader>
+            <PremiumCardContent className="space-y-6">
               {selectedDate && selectedTime ? (
                 <>
-                  <div>
-                    <strong>{t('booking.space')}:</strong> Surfskatehalle
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl">
+                      <span className="font-medium text-muted-foreground">{t('booking.space')}:</span>
+                      <span className="font-semibold">Surfskatehalle</span>
+                    </div>
+                    <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl">
+                      <span className="font-medium text-muted-foreground">{t('booking.date')}:</span>
+                      <span className="font-semibold">{format(selectedDate, 'PPP')}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl">
+                      <span className="font-medium text-muted-foreground">{t('booking.time')}:</span>
+                      <span className="font-semibold">{selectedTime}</span>
+                    </div>
+                    <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl">
+                      <span className="font-medium text-muted-foreground">{t('booking.duration')}:</span>
+                      <span className="font-semibold">{duration} {duration === 1 ? t('booking.hour') : t('booking.hours')}</span>
+                    </div>
                   </div>
-                  <div>
-                    <strong>{t('booking.date')}:</strong> {format(selectedDate, 'PPP')}
-                  </div>
-                  <div>
-                    <strong>{t('booking.time')}:</strong> {selectedTime}
-                  </div>
-                  <div>
-                    <strong>{t('booking.duration')}:</strong> {duration} {duration === 1 ? t('booking.hour') : t('booking.hours')}
-                  </div>
-                  <div className="text-lg font-semibold">
-                    <strong>{t('booking.total')}:</strong> {price}€
+                  
+                  <div className="border-t border-border/20 pt-6">
+                    <div className="flex items-center justify-between text-xl font-bold bg-gradient-to-r from-primary/20 to-primary/10 p-4 rounded-xl">
+                      <span>{t('booking.total')}:</span>
+                      <span className="text-primary">{price}€</span>
+                    </div>
                   </div>
                   
                   <Button 
                     onClick={handleBooking} 
-                    className="w-full" 
+                    className="w-full h-14 text-lg bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-300" 
                     disabled={!selectedTime || loading}
                   >
                     {loading ? t('booking.processing') : t('booking.proceedToPayment')}
                   </Button>
                 </>
               ) : (
-                <p className="text-muted-foreground">{t('booking.selectDateTimeFirst')}</p>
+                <div className="text-center py-12">
+                  <p className="text-muted-foreground text-lg">{t('booking.selectDateTimeFirst')}</p>
+                </div>
               )}
-            </CardContent>
-          </Card>
+            </PremiumCardContent>
+          </PremiumCard>
         </div>
       </div>
     </div>

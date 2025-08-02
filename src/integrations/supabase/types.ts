@@ -57,6 +57,7 @@ export type Database = {
           created_at: string
           duration: unknown
           id: string
+          pin_code: string | null
           ref_code: string | null
           space_id: string
           status: string
@@ -67,6 +68,7 @@ export type Database = {
           created_at?: string
           duration: unknown
           id?: string
+          pin_code?: string | null
           ref_code?: string | null
           space_id: string
           status?: string
@@ -77,6 +79,7 @@ export type Database = {
           created_at?: string
           duration?: unknown
           id?: string
+          pin_code?: string | null
           ref_code?: string | null
           space_id?: string
           status?: string

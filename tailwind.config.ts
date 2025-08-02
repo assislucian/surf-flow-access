@@ -66,14 +66,21 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-ocean': 'var(--gradient-ocean)',
-				'gradient-wave': 'var(--gradient-wave)'
+				'gradient-wave': 'var(--gradient-wave)',
+				'gradient-surf': 'var(--gradient-surf)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))'
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
-				'energy': 'var(--shadow-energy)'
+				'wave': 'var(--shadow-wave)',
+				'surf': 'var(--shadow-surf)',
+				'board': 'var(--shadow-board)'
 			},
 			transitionTimingFunction: {
-				'smooth': 'var(--transition-smooth)'
+				'wave': 'var(--transition-wave)',
+				'surf': 'var(--transition-surf)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
